@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+    
+</head>
+<title> T&Ch Travel calculator </title>
+<body>
+      
+    <div id="modal" class="none">
+        <label for="name">Write your name</label>
+        <input type="text" id='name'>
+        <label for="surname">Write your surname</label>
+        <input type="text" id="surname">
+        <label for="surname">Write your email</label>
+        <input type="text" id="email">
+        <button id="save-data">Save and order</button>
+    </div>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="#home" id="navbar__logo">T&Ch Travel calculator </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="#home" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#search" class="navbar__links" id="search-page">Search</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__links" id="about-page">About</a>
+                </li>
+
+                <li class="navbar__btn">
+                    <a href="#sign-up" class="button" id="signup">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero__container" id="home">
+            <h1 class="hero__heading">Greate your <span>travel</span></h1>
+            <p class="hero__description">Better options
+
+            </p>
+            
+            </div>
+       
+    </div>
+
+
+
+        <div class="SearchingPart" id="search">
+            <div class="badge">
+                <div class="ifYouWannaFlight" id="wannaFlight">
+                    <div class="imgContainer"><img src="image/plane.png" width="50px" height="50px">
+                    </div>
+                    <div class="name">
+                        Flights
+                    </div>
+                </div>
+                <div class="ifYouWannaHotel" id="wannaHotel">
+                    <div class="imgContainer"><img src="image/hotel.png" width="50px" height="50px"></div>
+                    <div class="name">
+                        Hotels
+                    </div>
+                </div>
+            </div>
+            
+            <div class="SearchingContainer" >
+                <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDlZ6fNVQvKN2huxr0sJJb6nVnNdBHvB0c"></script>
+                <div class="frame" id="flights-form">
+                    <div class="routType">
+                        <button class="OneWay tooltip" data-tooltip="One way" id="One" width="100%"> <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+                            </svg></button>
+                        <button class="RoundWay tooltip" data-tooltip="Round trip" id="Round" width="100%">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="devider" id="locationFrom">
+                        <label1> From:</label1>
+                       <input type="text" id="autocomplete" value="Kiev" autocomplete="off">
+                    </div>
+                    <div class="devider" id="locationT0">
+                        <label1> To:</label1>
+                        <input type="text" id="autocomplete_arr" name="loaction" placeholder="City" autocomplete="off">
+                    </div>
+                    <div class="devider" id="Depart">
+                        <input placeholder="Depart" class="startTrip" type="text" onfocus="(this.type='date')" id="DepartDate">
+                    </div>
+                    <div class="devider" id="Return">
+                        <input placeholder="Return" class="finishTrip" type="text" onfocus="(this.type='date')" id="ReturnDate" name="trip-end">
+                    </div>
+                    <label class="searchFor" id="searchForFlights"><svg xmlns="http://www.w3.org/2000/svg" width="90%" height="90%" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg></label>
+                </div>
+                
+                <div class="frame" id="hotels-form"  style="display:none;">
+                    <div class="deviderForHotels">
+                        <label1> Place:</label1>
+                        <input type="text" id="autocompleteHotelPLace" placeholder="City" name="loaction"   autocomplete="off">
+                    </div>
+                    <div class="deviderForHotels">
+                        <input placeholder="Check-in" class="startTrip" type="text" onfocus="(this.type='date')" id="check-in">
+                    </div>
+                    <div class="deviderForHotels">
+                        <input placeholder="Check-out" class="finishTrip" type="text" onfocus="(this.type='date')" id="check-out" name="trip-end">
+                    </div>
+                    <label class="searchFor" id="searchForHotels"><svg xmlns="http://www.w3.org/2000/svg" width="90%" height="90%" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg></label>
+            </div>
+                
+            </div>
+            
+                
+            <div class="hotelszzzz"  style="display:none;">
+       
+        </div> 
+            
+            
+        </div>
+
+
+        <!-- About Section -->
+        <div class="main" >
+
+            <div class="main__container" id="about">
+                <div class="main__img--container" >
+                    <div class="main__img--card"><i class="fas fa-globe-europe"></i></div>
+                </div>
+                <div class="main__content">
+                    <h1>What do we do?</h1>
+                    <h2>Help to create most acceptable conditions for your trip</h2>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Footer Section -->
+        <div class="footer__container">
+            <section class="social__media">
+                <div class="social__media--wrap">
+                    <div class="footer__logo">
+                        <a href="/" id="footer__logo">T&Ch</a>
+                    </div>
+                    <p class="website__rights">© T&Ch 2021. All rights reserved</p>
+                    <div class="social__icons">
+                        <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="/" class="social__icon--link"><i class="fab fa-instagram"></i></a>
+                        <a href="/" class="social__icon--link"><i class="fab fa-youtube"></i></a>
+                        <a href="/" class="social__icon--link"><i class="fab fa-linkedin"></i></a>
+                        <a href="/" class="social__icon--link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+
+        <script src="app.js"></script>
+</body>
+
+</html>
