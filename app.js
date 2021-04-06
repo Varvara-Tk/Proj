@@ -338,7 +338,7 @@ function getHotels(HotelInfo) {
     fetch(`https://hotels4.p.rapidapi.com/locations/search?query=${HotelInfo.LocationName}&locale=en_US`, {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "c4f3219d3fmshfd7fae08824cf1dp17cca4jsnc979aa0e2f0b",
+                "x-rapidapi-key": 
                 "x-rapidapi-host": "hotels4.p.rapidapi.com"
             }
         })
@@ -352,7 +352,7 @@ function getHotels(HotelInfo) {
             fetch(`https://hotels4.p.rapidapi.com/properties/list?destinationId=${id}&pageNumber=1&checkIn=${HotelInfo.check_in_time}&checkOut=${HotelInfo.check_out_time}&pageSize=25&adults1=1&currency=USD&locale=en_US&sortOrder=PRICE`, {
                     "method": "GET",
                     "headers": {
-                        "x-rapidapi-key": "c4f3219d3fmshfd7fae08824cf1dp17cca4jsnc979aa0e2f0b",
+                        "x-rapidapi-key": "
                         "x-rapidapi-host": "hotels4.p.rapidapi.com"
                     }
                 })
